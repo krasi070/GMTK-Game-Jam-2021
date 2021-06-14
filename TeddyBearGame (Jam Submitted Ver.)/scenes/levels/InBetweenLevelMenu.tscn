@@ -1,0 +1,164 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/sprites/menu/bg.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/menu/buttons click.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/Showcard Gothic Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/sprites/menu/buttons.png" type="Texture" id=4]
+[ext_resource path="res://scripts/InBetweenLevelMenu.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 96
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 48
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 3 )
+
+[node name="InBetweenLevelMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -165.0
+margin_top = 50.0
+margin_right = 165.0
+margin_bottom = 147.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.737255, 0.47451, 0.564706, 1 )
+custom_colors/font_color_shadow = Color( 0.00784314, 0.0588235, 0.101961, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+text = "Level 1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoneyLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -637.176
+margin_top = 208.58
+margin_right = -307.176
+margin_bottom = 305.58
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.737255, 0.47451, 0.564706, 1 )
+custom_colors/font_color_shadow = Color( 0.00784314, 0.0588235, 0.101961, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+text = "Result: "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EmptyStars" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -110.0
+margin_right = 20.0
+margin_bottom = -70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OneStar" type="Sprite" parent="EmptyStars"]
+position = Vector2( -200, 0 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 320, 81, 136, 106 )
+
+[node name="TwoStars" type="Sprite" parent="EmptyStars"]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 527, 83, 136, 106 )
+
+[node name="ThreeStars" type="Sprite" parent="EmptyStars"]
+position = Vector2( 200, 0 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 735, 83, 136, 106 )
+
+[node name="FilledStars" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -110.0
+margin_right = 20.0
+margin_bottom = -70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OneStar" type="Sprite" parent="FilledStars"]
+position = Vector2( -200, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 309, 81, 147, 110 )
+
+[node name="TwoStars" type="Sprite" parent="FilledStars"]
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 527, 83, 136, 106 )
+
+[node name="ThreeStars" type="Sprite" parent="FilledStars"]
+position = Vector2( 200, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 735, 83, 136, 106 )
+
+[node name="ReplayLabel" type="Label" parent="."]
+margin_left = 220.0
+margin_top = 360.0
+margin_right = 484.0
+margin_bottom = 409.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.737255, 0.47451, 0.564706, 1 )
+custom_colors/font_color_shadow = Color( 0.109804, 0.14902, 0.211765, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+text = "[R] Replay"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextLevelLabel" type="Label" parent="."]
+margin_left = 660.0
+margin_top = 360.0
+margin_right = 1120.0
+margin_bottom = 461.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.737255, 0.47451, 0.564706, 1 )
+custom_colors/font_color_shadow = Color( 0.109804, 0.14902, 0.211765, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+text = "[Space] Next Level
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}

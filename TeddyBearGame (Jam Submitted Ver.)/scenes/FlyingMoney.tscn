@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/FlyingMoney.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/money.png" type="Texture" id=2]
+
+[node name="FlyingMoney" type="Node2D"]
+script = ExtResource( 1 )
+speed = 2000.0
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 1026, 27, 83, 66 )
+
+[node name="Animation" type="AnimationPlayer" parent="."]

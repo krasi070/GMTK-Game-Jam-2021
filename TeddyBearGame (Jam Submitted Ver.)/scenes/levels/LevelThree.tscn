@@ -1,0 +1,171 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://scripts/Level.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/conveyor_belt_animation/dog0004.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/conveyor_belt_animation/dog0003.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/floorback.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/conveyor_belt_animation/dog0000.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/wall.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/conveyor_belt_animation/dog0001.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/conveyor_belt_animation/dog0002.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/conveyor_belt_animation/dog0005.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/frontfloor.png" type="Texture" id=10]
+[ext_resource path="res://scenes/icons/KnightBearIcon.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/icons/KingBearIcon.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/icons/MamaBearIcon.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/icons/BabyBearsIcon.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/sprites/conveyor_belt_animation/dog0008.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/conveyor_belt_animation/dog0009.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/conveyor_belt_animation/dog0010.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/conveyor_belt_animation/dog0011.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/paws.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/conveyor_belt_animation/dog0006.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/conveyor_belt_animation/dog0007.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/conveyor_belt_animation/dog0012.png" type="Texture" id=22]
+[ext_resource path="res://assets/fonts/Showcard Gothic Regular.ttf" type="DynamicFontData" id=23]
+[ext_resource path="res://scenes/icons/HoneyPotIcon.tscn" type="PackedScene" id=24]
+[ext_resource path="res://scenes/conveyor_belts/MiddleConveyorBelt.tscn" type="PackedScene" id=25]
+[ext_resource path="res://scenes/icons/PlusSign.tscn" type="PackedScene" id=26]
+[ext_resource path="res://scenes/conveyor_belts/BackConveyorBelt.tscn" type="PackedScene" id=27]
+[ext_resource path="res://scenes/conveyor_belts/FrontConveyorBelt.tscn" type="PackedScene" id=28]
+[ext_resource path="res://scenes/MoneyCounter.tscn" type="PackedScene" id=29]
+[ext_resource path="res://scenes/Clock.tscn" type="PackedScene" id=30]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=31]
+[ext_resource path="res://scenes/boxes/BoxArea.tscn" type="PackedScene" id=32]
+[ext_resource path="res://scenes/TrashCan.tscn" type="PackedScene" id=33]
+[ext_resource path="res://assets/audio/Spectrum Form.wav" type="AudioStream" id=34]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 23 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "run",
+"speed": 13.0
+} ]
+
+[node name="LevelThree" type="Node"]
+script = ExtResource( 1 )
+level = 3
+time_limit = 120
+speed = 125
+spawn_rate = 2.25
+one_star_threshold = 20.0
+two_stars_threshold = 30.0
+three_stars_threshold = 40.0
+include_farmer_cow = true
+include_nurse_patient = true
+include_knight_king = true
+include_mama_babies = true
+include_honey_pot = true
+
+[node name="Wall" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 6 )
+
+[node name="Instructions" type="Node2D" parent="."]
+position = Vector2( 550, 152 )
+
+[node name="LineOne" type="Node2D" parent="Instructions"]
+position = Vector2( 0, -47.5 )
+
+[node name="KingBearIcon" parent="Instructions/LineOne" instance=ExtResource( 12 )]
+position = Vector2( -75, 0 )
+
+[node name="PlusSign" parent="Instructions/LineOne" instance=ExtResource( 26 )]
+
+[node name="KnightBearIcon" parent="Instructions/LineOne" instance=ExtResource( 11 )]
+position = Vector2( 75, 0 )
+rotation = 0.715585
+
+[node name="LineTwo" type="Node2D" parent="Instructions"]
+
+[node name="MamaBearIcon" parent="Instructions/LineTwo" instance=ExtResource( 13 )]
+position = Vector2( -75, 0 )
+
+[node name="PlusSign" parent="Instructions/LineTwo" instance=ExtResource( 26 )]
+
+[node name="BabyBearsIcon" parent="Instructions/LineTwo" instance=ExtResource( 14 )]
+position = Vector2( 75, 0 )
+
+[node name="LineThree" type="Node2D" parent="Instructions"]
+position = Vector2( 0, 47.5 )
+
+[node name="HoneyPotIcon" parent="Instructions/LineThree" instance=ExtResource( 24 )]
+position = Vector2( -75, 0 )
+
+[node name="PlusSign" parent="Instructions/LineThree" instance=ExtResource( 26 )]
+
+[node name="Label" type="Label" parent="Instructions/LineThree"]
+margin_left = 42.3785
+margin_top = -14.8325
+margin_right = 104.379
+margin_bottom = 18.1675
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.694118, 0.388235, 0.423529, 1 )
+text = "ANY"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoneyCounter" parent="." instance=ExtResource( 29 )]
+position = Vector2( 640, 360 )
+
+[node name="Floor" type="Node2D" parent="."]
+position = Vector2( 640, 360 )
+
+[node name="Back" type="Sprite" parent="Floor"]
+texture = ExtResource( 4 )
+
+[node name="Front" type="Sprite" parent="Floor"]
+texture = ExtResource( 10 )
+
+[node name="Paws" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 19 )
+
+[node name="Clock" parent="." instance=ExtResource( 30 )]
+position = Vector2( 185, 102 )
+time_limit = 10.0
+pulsating_threshold = 0.75
+
+[node name="TrashCan" parent="." instance=ExtResource( 33 )]
+position = Vector2( 215.921, 485.396 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 640, 360 )
+z_index = 1
+frames = SubResource( 2 )
+animation = "run"
+frame = 1
+playing = true
+offset = Vector2( 0, 85 )
+
+[node name="BackConveyorBelt" parent="." instance=ExtResource( 27 )]
+
+[node name="MiddleConveyorBelt" parent="." instance=ExtResource( 25 )]
+speed = 150
+spawn_rate = 1.25
+
+[node name="FrontConveyorBelt" parent="." instance=ExtResource( 28 )]
+speed = 150
+spawn_rate = 1.25
+
+[node name="BoxArea" parent="." instance=ExtResource( 32 )]
+position = Vector2( 984.61, 604.421 )
+
+[node name="FlyingMoneyContainer" type="Node2D" parent="."]
+
+[node name="FlyingMoneyDestination" type="Node2D" parent="."]
+position = Vector2( 1076.35, 62.2263 )
+
+[node name="Player" parent="." instance=ExtResource( 31 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 34 )
+autoplay = true

@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/Clock.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/clock.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "pulsate"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Clock" type="Node2D"]
+position = Vector2( 28.6228, 53.8782 )
+script = ExtResource( 1 )
+
+[node name="ClockFace" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 101, 42, 177, 123 )
+
+[node name="ClockHand" type="Sprite" parent="."]
+position = Vector2( 7, 7 )
+texture = ExtResource( 2 )
+offset = Vector2( -2, -15 )
+region_enabled = true
+region_rect = Rect2( 295, 146, 24, 35 )
+
+[node name="ClockBolt" type="Sprite" parent="."]
+position = Vector2( 7, 7 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 302, 115, 23, 21 )
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+playback_speed = 1.75
+anims/pulsate = SubResource( 1 )
