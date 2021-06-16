@@ -3,6 +3,10 @@ extends Area2D
 signal matched
 
 const TIME_TO_REMAIN_AFTER_FULL = 1
+const ITEM_LIMIT := 2
+const PITCH_SCALE_MIN := 0.5
+const PITCH_SCALE_MAX := 4
+const HOVER_ENLARGE_AMOUNT := Vector2(0.05, 0.05)
 
 var is_mouse_in := false
 var interactable := true
@@ -70,13 +74,13 @@ func hide_labels() -> void:
 func _on_Box_item_dropped(item) -> void:
 	if is_mouse_in and interactable:
 		var size := items_inside.size()
-		if size < 2:
+		if size < ITEM_LIMIT:
 			icon_pos[size].add_child(item_info.icons[item.type].instance())
 			items_inside.append(item.type)
 			animation.play("enlarge")
 			player.drop()
 			_play_box_sfx()
-		if items_inside.size() == 2:
+		if items_inside.size() == ITEM_LIMIT:
 			_check_box()
 
 
@@ -127,7 +131,7 @@ func _on_Animation_animation_finished(anim_name: String) -> void:
 func _on_Box_mouse_entered() -> void:
 	is_mouse_in = true
 	if player.has_item() and interactable:
-		scale = Vector2(1.05, 1.05)
+		scale += HOVER_ENLARGE_AMOUNT
 
 
 func _on_Box_mouse_exited() -> void:
@@ -151,5 +155,5 @@ func _hide_poof_animation() -> void:
 func _play_box_sfx() -> void:
 	var rand_index := randi() % box_audio_container.get_child_count()
 	var audio : AudioStreamPlayer = box_audio_container.get_child(rand_index)
-	audio.pitch_scale = rand_range(0.5, 4)
+	audio.pitch_scale = rand_range(PITCH_SCALE_MIN, PITCH_SCALE_MAX)
 	audio.play()
