@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/sprites/bears.png" type="Texture" id=1]
+
+[node name="CriminalBearSprite" type="Sprite"]
+texture = ExtResource( 1 )
+offset = Vector2( 0, -40 )
+region_enabled = true
+region_rect = Rect2( 441, 26, 80, 87 )

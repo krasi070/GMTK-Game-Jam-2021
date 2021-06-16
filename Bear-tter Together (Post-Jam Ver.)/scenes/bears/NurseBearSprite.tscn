@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/sprites/bears.png" type="Texture" id=1]
+
+[node name="NurseBearSprite" type="Sprite"]
+texture = ExtResource( 1 )
+offset = Vector2( 0, -48 )
+region_enabled = true
+region_rect = Rect2( 74, 28, 82, 97 )

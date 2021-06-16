@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/sprites/boxes.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/symbols.png" type="Texture" id=2]
+[ext_resource path="res://assets/audio/mixkit-unlock-game-notification-253.wav" type="AudioStream" id=3]
+[ext_resource path="res://scripts/Box.gd" type="Script" id=4]
+[ext_resource path="res://assets/audio/mixkit-game-show-wrong-answer-buzz-950.wav" type="AudioStream" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 86.8675, 63.9476 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "enlarge"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[node name="MiddleBox" type="Area2D"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BoxSprites" type="Node2D" parent="."]
+
+[node name="Top" type="Sprite" parent="BoxSprites"]
+position = Vector2( 0, -12 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 909, 249, 159, 27 )
+
+[node name="Bottom" type="Sprite" parent="BoxSprites"]
+position = Vector2( -1, 50 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 910, 399, 160, 99 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.52538, 31.5673 )
+shape = SubResource( 1 )
+
+[node name="Correct" type="Sprite" parent="."]
+position = Vector2( -60, -30 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 481, 31, 116, 142 )
+
+[node name="Wrong" type="Sprite" parent="."]
+position = Vector2( -60, -30 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 286, 50, 133, 128 )
+
+[node name="IconAPoint" type="Node2D" parent="."]
+position = Vector2( -35, 60 )
+
+[node name="IconBPoint" type="Node2D" parent="."]
+position = Vector2( 30, 60 )
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+playback_speed = 7.5
+anims/enlarge = SubResource( 2 )
+
+[node name="CorrectAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -20.0
+
+[node name="WrongAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -20.0

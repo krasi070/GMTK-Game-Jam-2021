@@ -1,0 +1,112 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://scripts/ConveyorBelt.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/conveyor_belt_parts/mmill.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/conveyor_belt_parts/mhole.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/conveyor_belt_parts/mfrontbear.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/conveyor_belt_parts/mfront.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/conveyor_belt_parts/bbackbear.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/conveyor_belt_parts/mback.png" type="Texture" id=7]
+[ext_resource path="res://scripts/EndHole.gd" type="Script" id=8]
+[ext_resource path="res://assets/sprites/fire/fire0008.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/fire/fire0009.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/fire/fire0010.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/fire/fire0011.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/fire/fire0014.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/fire/fire0006.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/fire/fire0005.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/fire/fire0007.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/fire/fire0015.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/fire/fire0018.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/fire/fire0022.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/fire/fire0024.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/fire/fire0021.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/fire/fire0025.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/fire/fire0017.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/fire/fire0028.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/fire/fire0023.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/fire/fire0016.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/fire/fire0002.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/fire/fire0000.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/fire/fire0001.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/fire/fire0003.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprites/fire/fire0004.png" type="Texture" id=31]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 4.25519
+height = 116.39
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 27 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 25 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "burn",
+"speed": 33.0
+} ]
+
+[node name="MiddleConveyorBelt" type="Node2D"]
+script = ExtResource( 1 )
+direction = -1
+
+[node name="ItemTimer" type="Timer" parent="."]
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2( 1115, 455 )
+
+[node name="EndArea" type="Area2D" parent="."]
+position = Vector2( 570, 368.682 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndArea"]
+scale = Vector2( 4.12, 4.28 )
+shape = SubResource( 1 )
+
+[node name="Back" type="Sprite" parent="."]
+position = Vector2( 642, 360 )
+texture = ExtResource( 7 )
+
+[node name="BackBearPart" type="Sprite" parent="."]
+position = Vector2( 570, 484 )
+texture = ExtResource( 6 )
+
+[node name="Mill" type="Sprite" parent="."]
+position = Vector2( 644, 361 )
+texture = ExtResource( 2 )
+
+[node name="Hole" type="Area2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Hole"]
+position = Vector2( 642, 360 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
+position = Vector2( 565.073, 529 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="Fire" type="AnimatedSprite" parent="Hole"]
+position = Vector2( 155.15, 317.77 )
+frames = SubResource( 3 )
+animation = "burn"
+flip_h = true
+
+[node name="Items" type="Node2D" parent="."]
+z_index = 10
+z_as_relative = false
+
+[node name="Front" type="Sprite" parent="."]
+position = Vector2( 641, 360 )
+z_index = 11
+z_as_relative = false
+texture = ExtResource( 5 )
+
+[node name="FrontBearPart" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+z_index = 12
+z_as_relative = false
+texture = ExtResource( 4 )

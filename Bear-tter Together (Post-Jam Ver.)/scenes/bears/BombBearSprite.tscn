@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/sprites/bears.png" type="Texture" id=1]
+
+[node name="BombBearSprite" type="Sprite"]
+texture = ExtResource( 1 )
+offset = Vector2( 0, -55 )
+region_enabled = true
+region_rect = Rect2( 839, 346, 84, 113 )
