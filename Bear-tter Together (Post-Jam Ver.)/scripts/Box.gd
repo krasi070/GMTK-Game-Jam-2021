@@ -6,10 +6,10 @@ const TIME_TO_REMAIN_AFTER_FULL = 1
 const ITEM_LIMIT := 2
 const PITCH_SCALE_MIN := 0.5
 const PITCH_SCALE_MAX := 4
-const HOVER_ENLARGE_AMOUNT := Vector2(0.05, 0.05)
+const HOVER_ENLARGE_SIZE := Vector2(1.05, 1.05)
 
 var is_mouse_in := false
-var interactable := true
+var interactable := true setget set_interactable
 var items_inside : Array
 var item_info = ItemInfo
 var flying_money_scene : PackedScene
@@ -47,6 +47,12 @@ func _ready():
 	player.connect("item_dropped", self, "_on_Box_item_dropped")
 	poof_animation.connect("animation_finished", self, "_on_PoofAnimation_animation_finished")
 	animation.connect("animation_finished", self, "_on_Animation_animation_finished")
+
+
+func set_interactable(new_interactable: bool) -> void:
+	interactable = new_interactable
+	if interactable and is_mouse_in:
+		scale = HOVER_ENLARGE_SIZE
 
 
 func hide_correct_wrong() -> void:
@@ -92,7 +98,7 @@ func _check_box() -> void:
 	else:
 		show_wrong_msg()
 		correct_match = false
-	interactable = false
+	set_interactable(false)
 	var timer := get_tree().create_timer(TIME_TO_REMAIN_AFTER_FULL)
 	timer.connect("timeout", self, "_destroy", [correct_match])
 
@@ -125,13 +131,13 @@ func _on_PoofAnimation_animation_finished() -> void:
 
 func _on_Animation_animation_finished(anim_name: String) -> void:
 	if anim_name == "appear" or anim_name == "emptying":
-		interactable = true
+		set_interactable(true)
 
 
 func _on_Box_mouse_entered() -> void:
 	is_mouse_in = true
 	if player.has_item() and interactable:
-		scale += HOVER_ENLARGE_AMOUNT
+		scale = HOVER_ENLARGE_SIZE
 
 
 func _on_Box_mouse_exited() -> void:
