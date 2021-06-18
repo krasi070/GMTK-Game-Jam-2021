@@ -6,6 +6,7 @@ const EMPTY_ME_ANIM := "empty_me"
 const ENLARGE_ANIM := "enlarge"
 const ENLARGE_ANIM_SPEED := 7.5
 const FONT_SIZE := 28
+const HOVER_ENLARGE_SIZE := Vector2(1.05, 1.05)
 
 export var limit := 5
 export var progress_depletion_speed := 10
@@ -88,7 +89,10 @@ func _stop_animation():
 
 func _on_TrashCan_mouse_entered() -> void:
 	is_mouse_in = true
+	if player.has_item():
+		sprite_container.scale = HOVER_ENLARGE_SIZE
 	
 	
 func _on_TrashCan_mouse_exited() -> void:
 	is_mouse_in = false
+	sprite_container.scale = Vector2.ONE

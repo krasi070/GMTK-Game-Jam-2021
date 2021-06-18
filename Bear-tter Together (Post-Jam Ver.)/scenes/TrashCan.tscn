@@ -10,10 +10,10 @@
 extents = Vector2( 64.9438, 65.5158 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 31
+size = 36
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 resource_name = "empty_me"
 loop = true
 tracks/0/type = "value"
@@ -41,8 +41,7 @@ tracks/1/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "emptying"
+[sub_resource type="Animation" id=4]
 length = 1.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("SpriteContainer:scale")
@@ -69,7 +68,7 @@ tracks/1/keys = {
 "values": [ "Emptying.", "Emptying..", "Emptying...", "Emptying" ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath("SpriteContainer:scale")
 tracks/0/interp = 1
@@ -89,7 +88,6 @@ limit = 3
 progress_depletion_speed = 2
 
 [node name="SpriteContainer" type="Node2D" parent="."]
-scale = Vector2( 1.1, 1.1 )
 
 [node name="Shadow" type="Sprite" parent="SpriteContainer"]
 position = Vector2( 42, 22 )
@@ -144,6 +142,6 @@ __meta__ = {
 }
 
 [node name="Animation" type="AnimationPlayer" parent="."]
-anims/empty_me = SubResource( 5 )
-anims/emptying = SubResource( 3 )
-anims/enlarge = SubResource( 4 )
+anims/empty_me = SubResource( 3 )
+anims/emptying = SubResource( 4 )
+anims/enlarge = SubResource( 5 )
