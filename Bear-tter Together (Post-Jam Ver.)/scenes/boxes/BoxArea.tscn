@@ -16,9 +16,9 @@ region_enabled = true
 region_rect = Rect2( 783, 585, 447, 81 )
 
 [node name="LeftBox" parent="." instance=ExtResource( 2 )]
-position = Vector2( -175, 0 )
+position = Vector2( -178, 0 )
 
 [node name="MiddleBox" parent="." instance=ExtResource( 4 )]
 
 [node name="RightBox" parent="." instance=ExtResource( 3 )]
-position = Vector2( 175, 0 )
+position = Vector2( 178, 0 )
