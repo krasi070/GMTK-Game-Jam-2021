@@ -5,44 +5,44 @@
 [ext_resource path="res://assets/audio/box/box_correct.wav" type="AudioStream" id=3]
 [ext_resource path="res://scripts/Box.gd" type="Script" id=4]
 [ext_resource path="res://assets/audio/box/box_wrong.wav" type="AudioStream" id=5]
-[ext_resource path="res://assets/sprites/box_animation/dog0020.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/box_animation/dog0018.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/box_animation/dog0019.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/box_animation/dog0021.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprites/box_animation/dog0022.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprites/box_animation/dog0015.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/box_animation/dog0014.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/box_animation/dog0016.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/box_animation/dog0013.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/box_animation/dog0017.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/box_animation/dog0006.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprites/box_animation/dog0005.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprites/box_animation/dog0001.png" type="Texture" id=18]
-[ext_resource path="res://assets/sprites/box_animation/dog0002.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprites/box_animation/dog0003.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprites/box_animation/dog0004.png" type="Texture" id=21]
-[ext_resource path="res://assets/sprites/box_animation/dog0010.png" type="Texture" id=22]
-[ext_resource path="res://assets/sprites/box_animation/dog0011.png" type="Texture" id=23]
-[ext_resource path="res://assets/sprites/box_animation/dog0012.png" type="Texture" id=24]
-[ext_resource path="res://assets/sprites/box_animation/dog0007.png" type="Texture" id=25]
-[ext_resource path="res://assets/sprites/box_animation/dog0009.png" type="Texture" id=26]
-[ext_resource path="res://assets/sprites/box_animation/dog0008.png" type="Texture" id=27]
-[ext_resource path="res://assets/sprites/box_animation/dog0023.png" type="Texture" id=28]
-[ext_resource path="res://assets/sprites/box_animation/dog0024.png" type="Texture" id=29]
-[ext_resource path="res://assets/sprites/box_animation/dog0025.png" type="Texture" id=30]
-[ext_resource path="res://assets/sprites/box_animation/dog0026.png" type="Texture" id=31]
-[ext_resource path="res://assets/sprites/box_animation/dog0027.png" type="Texture" id=32]
-[ext_resource path="res://assets/sprites/box_animation/dog0028.png" type="Texture" id=33]
-[ext_resource path="res://assets/sprites/box_animation/dog0000.png" type="Texture" id=34]
-[ext_resource path="res://assets/sprites/box_animation/dog0031.png" type="Texture" id=35]
-[ext_resource path="res://assets/sprites/box_animation/dog0029.png" type="Texture" id=36]
-[ext_resource path="res://assets/sprites/box_animation/dog0030.png" type="Texture" id=37]
+[ext_resource path="res://assets/sprites/poof_animation/dog0020.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/poof_animation/dog0018.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/poof_animation/dog0019.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/poof_animation/dog0021.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/poof_animation/dog0022.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/poof_animation/dog0015.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/poof_animation/dog0014.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/poof_animation/dog0016.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/poof_animation/dog0013.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/poof_animation/dog0017.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/poof_animation/dog0006.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/poof_animation/dog0005.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/poof_animation/dog0001.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/poof_animation/dog0002.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/poof_animation/dog0003.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/poof_animation/dog0004.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/poof_animation/dog0010.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/poof_animation/dog0011.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/poof_animation/dog0012.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/poof_animation/dog0007.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/poof_animation/dog0009.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/poof_animation/dog0008.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/poof_animation/dog0023.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/poof_animation/dog0024.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/poof_animation/dog0025.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprites/poof_animation/dog0026.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprites/poof_animation/dog0027.png" type="Texture" id=32]
+[ext_resource path="res://assets/sprites/poof_animation/dog0028.png" type="Texture" id=33]
+[ext_resource path="res://assets/sprites/poof_animation/dog0000.png" type="Texture" id=34]
+[ext_resource path="res://assets/sprites/poof_animation/dog0031.png" type="Texture" id=35]
+[ext_resource path="res://assets/sprites/poof_animation/dog0029.png" type="Texture" id=36]
+[ext_resource path="res://assets/sprites/poof_animation/dog0030.png" type="Texture" id=37]
 [ext_resource path="res://assets/fonts/Showcard Gothic Regular.ttf" type="DynamicFontData" id=38]
 [ext_resource path="res://assets/audio/box/put_into_box_01.wav" type="AudioStream" id=39]
 [ext_resource path="res://assets/audio/box/put_into_box_03.wav" type="AudioStream" id=40]
 [ext_resource path="res://assets/audio/box/put_into_box_02.wav" type="AudioStream" id=41]
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 34 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 35 ) ],
 "loop": true,
@@ -57,11 +57,11 @@ extents = Vector2( 85.5684, 63.9476 )
 size = 28
 font_data = ExtResource( 38 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=4]
 size = 64
 font_data = ExtResource( 38 )
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=5]
 length = 0.15
 step = 0.05
 tracks/0/type = "value"
@@ -182,7 +182,7 @@ region_rect = Rect2( 726, 399, 168, 99 )
 [node name="PoofAnimation" type="AnimatedSprite" parent="BoxSprites"]
 position = Vector2( -170, -185 )
 z_index = 1
-frames = SubResource( 8 )
+frames = SubResource( 1 )
 animation = "poof"
 frame = 15
 
@@ -223,7 +223,7 @@ margin_left = -102.0
 margin_top = 32.0
 margin_right = 90.0
 margin_bottom = 97.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.694118, 0.388235, 0.423529, 1 )
 custom_colors/font_color_shadow = Color( 0.4, 0.219608, 0.384314, 1 )
 custom_constants/shadow_offset_x = 3
@@ -242,7 +242,7 @@ position = Vector2( -40, 60 )
 position = Vector2( 25, 60 )
 
 [node name="Animation" type="AnimationPlayer" parent="."]
-anims/appear = SubResource( 10 )
+anims/appear = SubResource( 5 )
 anims/emptying = SubResource( 6 )
 anims/enlarge = SubResource( 7 )
 

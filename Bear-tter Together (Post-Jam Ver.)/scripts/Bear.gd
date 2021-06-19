@@ -6,7 +6,7 @@ var picked_up := false
 var falling := false
 var is_mouse_in := false
 var item_info = ItemInfo
-var type : int setget set_type
+var type := -1 setget set_type
 var bear_textures : Dictionary
 
 onready var animation := $Animation
@@ -17,8 +17,12 @@ onready var end_area := $"../../EndArea"
 func _ready():
 	connect("mouse_entered", self, "_on_Bear_mouse_entered")
 	connect("mouse_exited", self, "_on_Bear_mouse_exited")
-	end_area.connect("area_entered", self, "_on_EndArea_area_entered")
-	add_child(item_info.sprites[type].instance())
+	if end_area != null:
+		end_area.connect("area_entered", self, "_on_EndArea_area_entered")
+	if type >= 0:
+		add_child(item_info.sprites[type].instance())
+	if player == null:
+		player = $"../Player"
 
 
 func _process(delta):

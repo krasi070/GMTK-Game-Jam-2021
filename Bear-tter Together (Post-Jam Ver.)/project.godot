@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="TeddyBearGame"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -24,6 +24,7 @@ LevelManager="*res://scripts/LevelManager.gd"
 window/size/width=1280
 window/size/height=720
 window/size/resizable=false
+window/stretch/aspect="keep"
 
 [input]
 
