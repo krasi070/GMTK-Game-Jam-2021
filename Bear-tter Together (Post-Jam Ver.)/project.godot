@@ -16,8 +16,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-ItemInfo="*res://scripts/ItemInfo.gd"
-LevelManager="*res://scripts/LevelManager.gd"
+ItemInfo="*res://scripts/autoload/ItemInfo.gd"
+LevelManager="*res://scripts/autoload/LevelManager.gd"
 
 [display]
 
