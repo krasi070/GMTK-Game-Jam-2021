@@ -70,8 +70,11 @@ position = Vector2( 640, 360 )
 texture = ExtResource( 6 )
 
 [node name="BackBearPart" type="Sprite" parent="."]
-position = Vector2( 640, 360 )
+position = Vector2( 565, 615 )
 texture = ExtResource( 4 )
+offset = Vector2( 3, -5 )
+region_enabled = true
+region_rect = Rect2( 543, 589, 45, 46 )
 
 [node name="Mill" type="Sprite" parent="."]
 position = Vector2( 640, 360 )
@@ -105,7 +108,10 @@ z_as_relative = false
 texture = ExtResource( 2 )
 
 [node name="FrontBearPart" type="Sprite" parent="."]
-position = Vector2( 640, 360 )
+position = Vector2( 520, 680 )
 z_index = 12
 z_as_relative = false
 texture = ExtResource( 3 )
+offset = Vector2( 3, -5 )
+region_enabled = true
+region_rect = Rect2( 501, 653, 45, 46 )
